@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Sign In - Candles{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-box">
+        <h1>Sign In</h1>
+        
+        {% if error %}
+        <div class="alert alert-error">{{ error }}</div>
+        {% endif %}
+
+        <form method="POST" class="auth-form">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="password-field">
+                    <input type="password" id="password" name="password" required>
+                    <button type="button" class="show-pwd" onclick="togglePassword()">SHOW</button>
+                </div>
+            </div>
+
+            <div class="form-group checkbox">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Remember me</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary full-width">Sign In</button>
+        </form>
+
+        <div class="auth-links">
+            <a href="{{ url_for('forgot_password') }}">Forgot password?</a>
+            <span> | </span>
+            <a href="{{ url_for('signup') }}">Create Account</a>
+        </div>
+
+        <div class="auth-footer">
+            <a href="#">Privacy Policy</a>
+        </div>
+    </div>
+</div>
+
+<script>
+function togglePassword() {
+    const pwd = document.getElementById('password');
+    const btn = document.querySelector('.show-pwd');
+    if (pwd.type === 'password') {
+        pwd.type = 'text';
+        btn.textContent = 'HIDE';
+    } else {
+        pwd.type = 'password';
+        btn.textContent = 'SHOW';
+    }
+}
+</script>
+{% endblock %}

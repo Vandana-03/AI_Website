@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}{{ category|title }} Candles - Candles{% endblock %}
+
+{% block content %}
+<div class="category-header">
+    <h1>{{ category|title }} Candles</h1>
+</div>
+
+<div class="container">
+    <div class="category-content">
+        <!-- Filters Sidebar -->
+        <aside class="filters-sidebar">
+            <h3>Filters</h3>
+            
+            <div class="filter-section">
+                <h4>By Benefit</h4>
+                <div class="filter-options">
+                    {% set benefits = [] %}
+                    {% for product in products %}
+                        {% if product.benefit not in benefits %}
+                            {% set _ = benefits.append(product.benefit) %}
+                            <label>
+                                <input type="checkbox" value="{{ product.benefit }}">
+                                {{ product.benefit }}
+                            </label>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h4>By Price</h4>
+                <input type="range" min="0" max="2000" step="100" class="price-slider">
+                <p>₹0 - ₹2000</p>
+            </div>
+
+            <button class="btn btn-secondary full-width">Apply Filters</button>
+        </aside>
+
+        <!-- Products Grid -->
+        <div class="products-section">
+            <div class="sort-bar">
+                <label>Sort by:</label>
+                <select class="sort-select">
+                    <option>Best Sellers</option>
+                    <option>Newest</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                </select>
+            </div>
+
+            <div class="products-grid">
+                {% for product in products %}
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
+                    </div>
+                    <div class="product-info">
+                        <h3>{{ product.name }}</h3>
+                        <p class="scent">{{ product.scent }}</p>
+                        <span class="benefit-badge">{{ product.benefit }}</span>
+                        <p class="price">₹{{ product.price }}</p>
+                        <div class="rating">⭐ {{ product.rating }} ({{ product.reviews }} reviews)</div>
+                        <form action="{{ url_for('add_to_cart', product_id=product.id) }}" method="POST">
+                            <input type="hidden" name="qty" value="1">
+                            <button type="submit" class="btn btn-secondary">Add to Cart</button>
+                        </form>
+                        <a href="{{ url_for('product_detail', product_id=product.id) }}" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

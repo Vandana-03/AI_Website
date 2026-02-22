@@ -1,0 +1,132 @@
+{
+  "luxury": [
+    {
+      "id": 1,
+      "name": "Golden Hour",
+      "price": 799,
+      "scent": "Rose + Sandalwood",
+      "benefit": "Luxury Relaxation",
+      "burnTime": "50 hours",
+      "image": "candle1.png",
+      "rating": 4.8,
+      "reviews": 45,
+      "inStock": true
+    },
+    {
+      "id": 2,
+      "name": "Pearl Essence",
+      "price": 899,
+      "scent": "Jasmine + Musk",
+      "benefit": "Evening Elegance",
+      "burnTime": "55 hours",
+      "image": "candle2.png",
+      "rating": 4.7,
+      "reviews": 38,
+      "inStock": true
+    }
+  ],
+  "scented": [
+    {
+      "id": 3,
+      "name": "Forest Fresh",
+      "price": 499,
+      "scent": "Cedarwood + Pine",
+      "benefit": "Energizing",
+      "burnTime": "40 hours",
+      "image": "candle3.png",
+      "rating": 4.5,
+      "reviews": 62,
+      "inStock": true
+    },
+    {
+      "id": 4,
+      "name": "Vanilla Bliss",
+      "price": 449,
+      "scent": "Vanilla + Amber",
+      "benefit": "Warm Comfort",
+      "burnTime": "45 hours",
+      "image": "candle4.png",
+      "rating": 4.6,
+      "reviews": 89,
+      "inStock": true
+    }
+  ],
+  "relaxing": [
+    {
+      "id": 5,
+      "name": "Lavender Dreams",
+      "price": 599,
+      "scent": "Lavender + Chamomile",
+      "benefit": "Deep Sleep",
+      "burnTime": "50 hours",
+      "image": "candle5.png",
+      "rating": 4.9,
+      "reviews": 124,
+      "inStock": true
+    },
+    {
+      "id": 6,
+      "name": "Zen Mind",
+      "price": 549,
+      "scent": "Eucalyptus + Mint",
+      "benefit": "Mental Clarity",
+      "burnTime": "48 hours",
+      "image": "candle6.png",
+      "rating": 4.7,
+      "reviews": 71,
+      "inStock": true
+    }
+  ],
+  "gifting": [
+    {
+      "id": 7,
+      "name": "Celebration Set",
+      "price": 1299,
+      "scent": "Mixed 3-pack",
+      "benefit": "Perfect Gift",
+      "burnTime": "120 hours total",
+      "image": "candle7.png",
+      "rating": 4.8,
+      "reviews": 53,
+      "inStock": true
+    },
+    {
+      "id": 8,
+      "name": "Love Express",
+      "price": 899,
+      "scent": "Rose + Vanilla",
+      "benefit": "Romance",
+      "burnTime": "50 hours",
+      "image": "candle8.png",
+      "rating": 4.6,
+      "reviews": 47,
+      "inStock": true
+    }
+  ],
+  "customized": [
+    {
+      "id": 9,
+      "name": "Custom Creation",
+      "price": 699,
+      "scent": "Your Choice",
+      "benefit": "Personalized",
+      "burnTime": "45 hours",
+      "image": "candle9.png",
+      "rating": 4.7,
+      "reviews": 28,
+      "inStock": true
+    },
+    {
+      "id": 10,
+      "name": "Name Engraved",
+      "price": 749,
+      "scent": "Premium Blend",
+      "benefit": "Bespoke Gift",
+      "burnTime": "50 hours",
+      "image": "candle10.png",
+      "rating": 4.9,
+      "reviews": 35,
+      "inStock": true
+    }
+  ]
+}

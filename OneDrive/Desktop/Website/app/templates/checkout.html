@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}Checkout - Candles{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Checkout</h1>
+
+    <div class="checkout-container">
+        <!-- Shipping Address -->
+        <div class="checkout-section">
+            <h2>Shipping Address</h2>
+            <div class="address-box">
+                <p><strong>{{ user.name }}</strong></p>
+                <p>Phone: {{ user.phone }}</p>
+                <p>Postal Code: {{ user.zipcode }}</p>
+            </div>
+        </div>
+
+        <!-- Payment Method -->
+        <form method="POST" class="checkout-form">
+            <div class="checkout-section">
+                <h2>Select Payment Method</h2>
+                
+                <div class="payment-options">
+                    <label class="payment-option">
+                        <input type="radio" name="payment_method" value="cod" checked>
+                        <span class="payment-label">
+                            <strong>💵 Cash on Delivery (COD)</strong>
+                            <small>Pay when you receive your order</small>
+                        </span>
+                    </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="payment_method" value="online">
+                        <span class="payment-label">
+                            <strong>💳 Online Payment</strong>
+                            <small>UPI, Credit Card, Debit Card, Net Banking</small>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="checkout-section">
+                <h2>Order Summary</h2>
+                <div class="order-summary">
+                    <div class="summary-item">
+                        <span>Subtotal</span>
+                        <span>₹1000</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Shipping</span>
+                        <span>₹99</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Tax (5%)</span>
+                        <span>₹50</span>
+                    </div>
+                    <div class="summary-total">
+                        <span>Total Amount</span>
+                        <span>₹1149</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trust & Security -->
+            <div class="trust-info">
+                <p>🔒 Your payment is secure. We use industry-standard encryption.</p>
+            </div>
+
+            <button type="submit" class="btn btn-primary full-width">Confirm Order</button>
+            <a href="{{ url_for('cart') }}" class="btn btn-outline full-width">Back to Cart</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

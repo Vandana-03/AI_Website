@@ -1,0 +1,20 @@
+{
+  "test@candlebliss.com": {
+    "name": "Test User",
+    "email": "test@candlebliss.com",
+    "birthday": "1990-05-15",
+    "zipcode": "110001",
+    "phone": "9876543210",
+    "password": "pbkdf2:sha256:600000$7k3z9mQ2w$e5f8b9c2d1a3f6e7b8c9d0e1f2a3b4c5d6e7f8a9",
+    "created_at": "2026-02-22T10:00:00"
+  },
+  "test@gmail.com": {
+    "name": "test",
+    "email": "test@gmail.com",
+    "birthday": "2026-02-02",
+    "zipcode": "110011",
+    "phone": "1234323231",
+    "password": "pbkdf2:sha256:600000$PvfFX8EjAUeHG2Oi$6a685f74b20a5b24ecc3be0cf55f7d290f2bdc0322d435f735325e742bdee29f",
+    "created_at": "2026-02-22T15:44:51.069929"
+  }
+}

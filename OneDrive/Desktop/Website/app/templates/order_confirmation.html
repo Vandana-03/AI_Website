@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Order Confirmation - Candles{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="confirmation-box">
+        <div class="confirmation-header">
+            <h1>✓ Order Confirmed!</h1>
+            <p>Thank you for your purchase</p>
+        </div>
+
+        <div class="order-details">
+            <div class="detail-item">
+                <span>Order ID:</span>
+                <strong>{{ order_id }}</strong>
+            </div>
+            <div class="detail-item">
+                <span>Total Amount:</span>
+                <strong>₹{{ total }}</strong>
+            </div>
+            <div class="detail-item">
+                <span>Payment Method:</span>
+                <strong>{% if payment_method == 'cod' %}Cash on Delivery{% else %}Online Payment{% endif %}</strong>
+            </div>
+        </div>
+
+        <div class="confirmation-message">
+            {% if payment_method == 'cod' %}
+            <p>Your order is confirmed! Our delivery partner will contact you soon to schedule delivery.</p>
+            <p>You can pay with cash when the package arrives.</p>
+            {% else %}
+            <p>Your payment has been processed successfully. Your order is being prepared for shipment.</p>
+            {% endif %}
+        </div>
+
+        <div class="confirmation-actions">
+            <a href="{{ url_for('account') }}" class="btn btn-primary">Track Order</a>
+            <a href="{{ url_for('home') }}" class="btn btn-outline">Continue Shopping</a>
+        </div>
+
+        <div class="confirmation-footer">
+            <p>Check your email for order details and tracking information.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
